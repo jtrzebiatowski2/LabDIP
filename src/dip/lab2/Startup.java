@@ -21,17 +21,21 @@ import javax.swing.JOptionPane;
 public class Startup {
     public static enum ServiceQuality {
            GOOD, FAIR, POOR
-    };
+    }
  
     public static void main(String[] args) {
         
-        BaggageServiceTipCalculator baggageService =
-                new BaggageServiceTipCalculator(
-                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
-        
-        baggageService.calculateTip();
-        
-    }
+       CalculateServiceTip calculateFoodServiceTip = new FoodServiceTipCalculator(GOOD, 45.65);
+       CalculateServiceTip calculateBaggageServiceTip = new BaggageServiceTipCalculator(FAIR, 5);
+       
+       Tipper foodTipper1 = new Tipper(calculateFoodServiceTip);
+       
+       Tipper serviceTipper1 = new Tipper(calculateBaggageServiceTip);
+       
+       foodTipper1.calculateTip();
+       serviceTipper1.calculateTip();
+      
+            }
     
 
 }

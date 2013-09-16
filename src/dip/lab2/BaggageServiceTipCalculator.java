@@ -26,8 +26,22 @@ public class BaggageServiceTipCalculator implements CalculateServiceTip {
     }
 
     @Override
-    public void calculateTip() {
-        getTipForBaggeHandler();
+    public double calculateTip() {
+        double tip = 0.00; // always initialize local variables
+
+        switch(serviceQuality) {
+            case GOOD:
+                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                break;
+            case FAIR:
+                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                break;
+            case POOR:
+                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                break;
+        }
+
+        return tip;
     }
     
     private ServiceQuality serviceQuality;

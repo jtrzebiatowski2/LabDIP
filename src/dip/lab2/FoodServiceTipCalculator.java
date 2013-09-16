@@ -27,13 +27,30 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
         this.setBill(billAmt);
     }
 
-    @Override
-    public void calculateTip() {
-        getTip();
-        
+    public FoodServiceTipCalculator() {
     }
     
 
+    @Override
+    public double calculateTip() {
+            double tip = 0.00; // always initialize local variables
+
+        switch(serviceQuality) {
+            case GOOD:
+                tip = bill * GOOD_RATE;
+                break;
+            case FAIR:
+                tip = bill * FAIR_RATE;
+                break;
+            case POOR:
+                tip = bill * POOR_RATE;
+                break;
+        }
+
+        return tip;
+    }
+        
+        
     public double getTip() {
         double tip = 0.00; // always initialize local variables
 
