@@ -9,6 +9,6 @@ package dip.lab1;
  * @author J-Tron
  */
 public interface PaidEmployee {
-    public void calculateAnnualEmployeePay();
-    public void calculateWeeklyEmployeePay();
+    public abstract double calculateAnnualEmployeePay();
+    public abstract double calculateWeeklyEmployeePay();
 }

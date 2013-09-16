@@ -26,14 +26,20 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+        if(name == null || name.length() < 1){
+            throw new IllegalArgumentException();
+        }
     }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+        if(address == null || address.length() < 1){
+            throw new IllegalArgumentException();
+
+        }
     }
 
     public String getBirthdate() {
@@ -42,6 +48,9 @@ public class Employee {
 
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
+        if(birthdate == null || birthdate.length() < 1){
+            throw new IllegalArgumentException();
+        }
     }
 
     public String getEmployeeId() {
@@ -50,7 +59,11 @@ public class Employee {
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
+        if(employeeId == null || employeeId.length() < 1){
+            throw new IllegalArgumentException();
+        }
     }
     
 
 }
+    
