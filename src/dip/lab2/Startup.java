@@ -25,8 +25,8 @@ public class Startup {
  
     public static void main(String[] args) {
         
-       CalculateServiceTip calculateFoodServiceTip = new FoodServiceTipCalculator(GOOD, 45.65);
-       CalculateServiceTip calculateBaggageServiceTip = new BaggageServiceTipCalculator(FAIR, 5);
+       CalculateServiceTip calculateFoodServiceTip = new FoodServiceTipCalculator(ServiceQuality.GOOD, 45.65);
+       CalculateServiceTip calculateBaggageServiceTip = new BaggageServiceTipCalculator(ServiceQuality.FAIR, 5);
        
        Tipper foodTipper1 = new Tipper(calculateFoodServiceTip);
        

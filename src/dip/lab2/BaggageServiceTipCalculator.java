@@ -21,6 +21,10 @@ public class BaggageServiceTipCalculator implements CalculateServiceTip {
 
     private double baseTipPerBag;
     private int bagCount;
+
+    BaggageServiceTipCalculator(Startup.ServiceQuality serviceQuality, int i) {
+    
+    }
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }

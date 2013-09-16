@@ -26,7 +26,6 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
-
     public FoodServiceTipCalculator() {
     }
     
