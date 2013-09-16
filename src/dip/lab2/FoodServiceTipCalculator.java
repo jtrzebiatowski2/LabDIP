@@ -30,6 +30,7 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
     @Override
     public void calculateTip() {
         getTip();
+        
     }
     
 

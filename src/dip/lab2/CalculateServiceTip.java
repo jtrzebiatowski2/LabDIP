@@ -9,5 +9,5 @@ package dip.lab2;
  * @author J-Tron
  */
 public interface CalculateServiceTip {
-    public abstract void calculateTip();
+    public abstract double calculateTip();
 }
