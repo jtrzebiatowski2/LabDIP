@@ -8,7 +8,7 @@ package dip.lab2;
  *
  * @author your name goes here
  */
-public class BaggageServiceTipCalculator implements CalculateServiceTip {
+public class BaggageServiceTipCalculator implements TipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
     private static final String BILL_ENTRY_ERR =
@@ -22,9 +22,15 @@ public class BaggageServiceTipCalculator implements CalculateServiceTip {
     private double baseTipPerBag;
     private int bagCount;
 
-    BaggageServiceTipCalculator(Startup.ServiceQuality serviceQuality, int i) {
-    
+        @Override
+        public void setServiceRating(ServiceQuality q) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+        public TipCalculator.ServiceQuality getServiceRating() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }
@@ -48,39 +54,10 @@ public class BaggageServiceTipCalculator implements CalculateServiceTip {
         return tip;
     }
     
-    private ServiceQuality serviceQuality;
+    private TipCalculator.ServiceQuality serviceQuality;
 
-    public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
-        this.setServiceRating(q); // perform validation
-        this.setBagCount(bags);
-
-        baseTipPerBag = 1.00; // set default value
-    }
-
-    public double getTipForBaggeHandler() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
-                break;
-            case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
-                break;
-            case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
-                break;
-        }
-
-        return tip;
-    }
-
-    public final void setServiceRating(ServiceQuality q) {
-        // No need to validate because enums provide type safety!
-        serviceQuality = q;
-    }
-
-    public ServiceQuality getServiceQuality() {
+    
+    public TipCalculator.ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 

@@ -8,7 +8,7 @@ package dip.lab2;
  *
  * @author your name goes here
  */
-public class FoodServiceTipCalculator implements CalculateServiceTip {
+public class FoodServiceTipCalculator implements TipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be greater than or equal to " + MIN_BILL;
@@ -17,10 +17,8 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
     private static final double POOR_RATE = 0.10;
 
     private double bill;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
-    private ServiceQuality serviceQuality;
+    
+    private TipCalculator.ServiceQuality serviceQuality;
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
@@ -48,25 +46,6 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
 
         return tip;
     }
-        
-        
-    public double getTip() {
-        double tip = 0.00; // always initialize local variables
-
-        switch(serviceQuality) {
-            case GOOD:
-                tip = bill * GOOD_RATE;
-                break;
-            case FAIR:
-                tip = bill * FAIR_RATE;
-                break;
-            case POOR:
-                tip = bill * POOR_RATE;
-                break;
-        }
-
-        return tip;
-    }
 
     public final void setBill(double billAmt) {
         if(billAmt < MIN_BILL) {
@@ -79,9 +58,13 @@ public class FoodServiceTipCalculator implements CalculateServiceTip {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
-
-    public ServiceQuality getServiceQuality() {
+    public TipCalculator.ServiceQuality getServiceQuality() {
         return serviceQuality;
+    }
+
+    @Override
+    public ServiceQuality getServiceRating() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

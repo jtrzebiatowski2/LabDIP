@@ -19,18 +19,15 @@ import javax.swing.JOptionPane;
  * @author your name goes here
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    }
  
     public static void main(String[] args) {
         
-       CalculateServiceTip calculateFoodServiceTip = new FoodServiceTipCalculator(ServiceQuality.GOOD, 45.65);
-       CalculateServiceTip calculateBaggageServiceTip = new BaggageServiceTipCalculator(ServiceQuality.FAIR, 5);
+       TipCalculator calculateFoodServiceTip = new FoodServiceTipCalculator (ServiceQuality.GOOD, 45.65);
+       TipCalculator calculateBaggageServiceTip = new BaggageServiceTipCalculator (ServiceQuality.FAIR, 5);
        
-       Tipper foodTipper1 = new Tipper(calculateFoodServiceTip);
+       TipService foodTipper1 = new TipService(calculateFoodServiceTip);
        
-       Tipper serviceTipper1 = new Tipper(calculateBaggageServiceTip);
+       TipService serviceTipper1 = new TipService(calculateBaggageServiceTip);
        
        foodTipper1.calculateTip();
        serviceTipper1.calculateTip();
