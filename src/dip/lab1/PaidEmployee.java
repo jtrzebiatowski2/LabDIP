@@ -10,5 +10,9 @@ package dip.lab1;
  */
 public interface PaidEmployee {
     public abstract double calculateAnnualEmployeePay();
+    /**
+     *
+     * @return
+     */
     public abstract double calculateWeeklyEmployeePay();
 }

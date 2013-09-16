@@ -22,9 +22,18 @@ public class Startup {
         PaidEmployee pe2 = new SalariedEmployee("Joe", "544 Western Cir.", "44857", "05/14/1968", 56750.00);
         PaidEmployee pe3 = new SalariedPlusBonusEmployee("Nick", "2635 Sherman Dr.", "44875", "07/31/1950", 106750.00, 12000.00);
     
+        PaidEmployee[] paidEmployees = {pe1, pe2, pe3};
         
-    
-    
+        for(int i=0; i < paidEmployees.length; i++) {
+            System.out.println("Employee " + (i+1) + " yearly compensation:");
+            hr.getAnnualEmployeePay(paidEmployees[i]);
+        }
+        
+        for(int i=0; i < paidEmployees.length; i++) {
+            System.out.println("Employee " + (i+1) + " weekly compensation:");
+            hr.getWeeklyEmployeePay(paidEmployees[i]);
+        }
+
     
     
     }
