@@ -8,6 +8,10 @@ package dip.lab1;
  */
 public class HRService {
     private PaidEmployee paidEmployee;
+
+    public HRService() {
+    }
+    
     
     public HRService(PaidEmployee pe1) {
         paidEmployee = pe1;

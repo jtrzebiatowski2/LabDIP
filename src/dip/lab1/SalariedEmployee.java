@@ -19,8 +19,8 @@ public class SalariedEmployee extends Employee implements PaidEmployee {
     
 
     @Override
-    public void calculateAnnualEmployeePay() {
-        annualPay = annualSalary;
+    public double calculateAnnualEmployeePay() {
+        return annualPay = annualSalary;
     }
 
     public double getAnnualPay() {
@@ -28,8 +28,8 @@ public class SalariedEmployee extends Employee implements PaidEmployee {
     }
 
     @Override
-    public void calculateWeeklyEmployeePay() {
-       weeklyPay = annualPay / numberWeeksInYear;
+    public double calculateWeeklyEmployeePay() {
+       return weeklyPay = annualPay / numberWeeksInYear;
     }
 
     public double getWeeklyPay() {

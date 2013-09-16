@@ -19,8 +19,8 @@ public class HourlyEmployee extends Employee implements PaidEmployee {
     }
     
     @Override
-    public void calculateAnnualEmployeePay() {
-        annualPay = hourlyRate * totalHrsForYear;
+    public double calculateAnnualEmployeePay() {
+        return annualPay = hourlyRate * totalHrsForYear;
         }
     
     public double getAnnualPay(){
@@ -28,8 +28,8 @@ public class HourlyEmployee extends Employee implements PaidEmployee {
     }
 
     @Override
-    public void calculateWeeklyEmployeePay() {
-        weeklyPay = hourlyRate * totalHoursWorkedInWeek;
+    public double calculateWeeklyEmployeePay() {
+        return weeklyPay = hourlyRate * totalHoursWorkedInWeek;
     }
     
     public double getWeeklyPay() {
