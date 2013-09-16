@@ -6,7 +6,7 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class HourlyEmployee extends Employee implements PaidEmployee {
+public class HourlyEmployee extends Employee {
     private double annualPay;
     private double weeklyPay;
     private double hourlyRate;
@@ -20,7 +20,8 @@ public class HourlyEmployee extends Employee implements PaidEmployee {
     
     @Override
     public double calculateAnnualEmployeePay() {
-        return annualPay = hourlyRate * totalHrsForYear;
+        annualPay = hourlyRate * totalHrsForYear;
+        return annualPay;
         }
     
     public double getAnnualPay(){
@@ -29,7 +30,8 @@ public class HourlyEmployee extends Employee implements PaidEmployee {
 
     @Override
     public double calculateWeeklyEmployeePay() {
-        return weeklyPay = hourlyRate * totalHoursWorkedInWeek;
+        weeklyPay = hourlyRate * totalHoursWorkedInWeek;
+        return weeklyPay;
     }
     
     public double getWeeklyPay() {

@@ -7,7 +7,7 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class Employee {
+public abstract class Employee implements PaidEmployee{
     private String name;
     private String employeeId;
     private String address;

@@ -22,7 +22,8 @@ public class SalariedPlusBonusEmployee extends SalariedEmployee implements PaidE
     
     @Override
     public double calculateAnnualEmployeePay() {
-        return annualPay = annualSalary + annualBonus;
+       annualPay = annualSalary + annualBonus;
+               return annualPay;
     }
 
     @Override
@@ -32,7 +33,8 @@ public class SalariedPlusBonusEmployee extends SalariedEmployee implements PaidE
 
     @Override
     public double calculateWeeklyEmployeePay() {
-        return weeklyPay = annualPay / numberWeeksInYear;
+        weeklyPay = annualPay / numberWeeksInYear;
+        return weeklyPay;
     }
 
     @Override
